@@ -9,8 +9,24 @@ app.get("/", (req, res) => {
 });
 
 app.get("/date", (req, res) => {
-  const date = new Date().toLocaleDateString();
-  res.send(date).status(200);
+  let date = new Date();
+  let respons =
+    date.getDate() +
+    "/" +
+    date.getMonth() +
+    "/" +
+    date.getFullYear() +
+    " " +
+    date.getHours() +
+    "/" +
+    date.getMinutes() +
+    "/" +
+    date.getSeconds();
+  res.send(respons).status(200);
+});
+
+app.get("/get-ip", (req, res) => {
+  res.send(req.ip).status(200);
 });
 
 const PORT = process.PORT || 5500;
