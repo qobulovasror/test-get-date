@@ -13,11 +13,6 @@ app.get("/date", (req, res) => {
   res.send(date).status(200);
 });
 
-app.get("/time", (req, res) => {
-  const time = new Date().getTime();
-  res.send(time).status(200);
-});
-
 const PORT = process.PORT || 5500;
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
